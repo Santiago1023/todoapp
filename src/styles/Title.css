@@ -1,0 +1,18 @@
+.div-title {
+    height: 50px;
+    width: 300px;
+    background-color: #490000;
+    display: flex;
+    justify-content: center; /*centrar horizontal*/
+    align-items: center;    /*centrar vertical*/
+    border: 0;
+
+}
+.div-title > h1{
+    color: white;
+    margin: 0;
+}
+
+.tasks{
+    color: #490000;
+}
