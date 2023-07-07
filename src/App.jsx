@@ -15,9 +15,14 @@ function App() {
       "state": true,
     },
     {
-      "desc": "Tercer todo para realizar",
+      "desc": "Primer todo para realizar",
       "state": true,
     },
+    {
+      "desc": "Segundo todo para realizar",
+      "state": true,
+    },
+    
   ]
   
   return (
@@ -25,9 +30,10 @@ function App() {
       <Titles/>
       <Input/>
       <TodoList>
-        <TodoItem/>
+        {data.map((item) => {
+          return <TodoItem key={item.desc} text={item.desc}/>
+        })}
       </TodoList>
-
     </>
   );
 }
