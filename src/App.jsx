@@ -3,6 +3,8 @@ import { TodoItem } from './components/TodoItem';
 import { Input } from './components/Input';
 import { Titles } from './components/Titles';
 
+import './App.css';
+
 function App() {
 
   const data = [
@@ -26,7 +28,7 @@ function App() {
   ]
   
   return (
-    <>
+    <div className='container'>
       <Titles/>
       <Input/>
       <TodoList>
@@ -34,7 +36,7 @@ function App() {
           return <TodoItem key={item.desc} text={item.desc}/>
         })}
       </TodoList>
-    </>
+    </div>
   );
 }
 

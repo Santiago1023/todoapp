@@ -3,14 +3,10 @@
     height: 65px;
     display: flex;
     position: relative; /*Agrega esta propiedad para establecer un contexto de posicionamiento para el botón*/
-
-    
     margin-left: 32px;
     margin-top: 20px;
     margin-bottom: 20px;
-   
 }
-
 .todo-item-interno {
     width: 510px;
     height: 40px;
@@ -28,11 +24,10 @@
     top: 0;
     right: 0;
     transition: transform 0.3s ease; /* Agrega una transición de transformación con duración y función de interpolación */
-
 }
 .icon-delete:hover {
     transform: scale(1.2); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
-  }
+}
 .icon-button {
     border: none;
     background-color: transparent;
@@ -46,11 +41,9 @@
 }
 .icon-check:hover {
     transform: scale(1.2); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
-  }
-
-  .spam-text{
-
-  }
+}
+.spam-text{
+}
 .debug{
     border: 1px solid red;
-  }
+}
