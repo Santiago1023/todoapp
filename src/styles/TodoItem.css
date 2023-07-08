@@ -1,28 +1,31 @@
 .todo-item {
     width: 535px;
-    height: 65px;
     display: flex;
-    position: relative; /*Agrega esta propiedad para establecer un contexto de posicionamiento para el botón*/
-    margin-left: 32px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    align-items: center;
+    padding-top: 15px;
 }
 .todo-item-interno {
-    width: 510px;
-    height: 40px;
+    position: relative; /*Agrega esta propiedad para establecer un contexto de posicionamiento para el botón*/
+    width: 100%;
     background-color: #D9D9D9;
-    margin-top: 15px;
-    padding-top: 10px;
-    padding-left: 10px;
-    position: relative; /* Agrega esta propiedad para establecer un contexto de posicionamiento para el botón */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px 20px;
 }
+
+.icon-delete-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%,-50%);
+}
+
 .icon-delete {
     width: 30px;
     height: 30px;
     color: #490000;
-    position: absolute;
-    top: 0;
-    right: 0;
     transition: transform 0.3s ease; /* Agrega una transición de transformación con duración y función de interpolación */
 }
 .icon-delete:hover {
@@ -41,8 +44,6 @@
 }
 .icon-check:hover {
     transform: scale(1.2); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
-}
-.spam-text{
 }
 .debug{
     border: 1px solid red;

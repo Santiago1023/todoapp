@@ -9,19 +9,19 @@ function App() {
 
   const data = [
     {
-      "desc": "Primer todo para realizar",
+      "desc": "Primer todo para realizar dfasdfasdadadasdasdasd",
       "state": true,
     },
     {
-      "desc": "Segundo todo para realizar",
+      "desc": "Segundo todo para realizar asdjhadsjhasdhkasdkaas",
       "state": true,
     },
     {
-      "desc": "Primer todo para realizar",
+      "desc": "Tercer todo para realizar",
       "state": true,
     },
     {
-      "desc": "Segundo todo para realizar",
+      "desc": "Cuarto todo para realizar",
       "state": true,
     },
     
