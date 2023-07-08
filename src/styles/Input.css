@@ -5,6 +5,7 @@
     border: 3px solid #490000;
     font-size: 20px;
     padding: 10px;
+    border-radius: 10px;
 }
 .input-search::placeholder {
     font-size: 20px;
