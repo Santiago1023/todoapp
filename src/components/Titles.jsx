@@ -3,7 +3,7 @@ import '../styles/Title.css';
 const Titles = ({completedTodos, totalTodos}) => {
   return (
     <>
-        <div className="div-title debug">
+        <div className="div-title">
             <h1>Todo App</h1>
         </div>
         <div>

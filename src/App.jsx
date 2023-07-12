@@ -35,11 +35,13 @@ function App() {
   const [completedTodos, setCompletedTodos] = useState(0);
   const [searchValue, setSearchValue] = useState('');
   const [openModal, setOpenModal] = useState(false);
+  const [filterTodoList, setFilterTodoList] = useState([]);
   
   useEffect(() => {
     dataLocalStorage();
     console.log('Ejecutó metodo dataLocalStorage useEffect')
     console.log('todoList', todoList)
+    console.log('todoList', filterTodoList)
   }, []);
 
   useEffect(() => {
@@ -50,6 +52,24 @@ function App() {
     setTotalTodos(todoList.length);
   }, [todoList]);
 
+  useEffect(() =>{
+    const timer = setTimeout(()=>{
+      console.log('Filtrando desde el useEffect');
+      const filterValues = todoList.filter(todo => {
+        if (searchValue.trim() === "") {
+          // Si no hay texto en el input, muestra todos los todos
+          return true;
+        } else {
+          // Si hay texto en el input, filtra los todos que coincidan con el texto
+          return todo.desc.toLowerCase().includes(searchValue.toLowerCase());
+        }
+      });
+      setFilterTodoList(filterValues);
+      console.log('filterValues: ', filterValues);
+    }, 500)
+    return () => clearTimeout(timer);
+
+  }, [searchValue, todoList]);
 
   // useEffect(() => {
   //   console.log('todoList', todoList);
@@ -66,7 +86,9 @@ function App() {
       const data = JSON.parse(dataString);
       console.log('Desde el metodo dataLocalStorage, data = ', data);
       setTodoList(data);
+      setFilterTodoList(data);
       console.log('Desde el metodo dataLocalStorage, todoList = ', todoList);
+      console.log('Desde el metodo dataLocalStorage, filterTodoList = ', filterTodoList);
     }
     else{
       localStorage.setItem('data', JSON.stringify([]));
@@ -88,15 +110,7 @@ function App() {
     console.log('despues: ',updatedList);
     setTodoList(updatedList);
   };
-  const filteredTodoList = todoList.filter(todo => {
-    if (searchValue.trim() === "") {
-      // Si no hay texto en el input, muestra todos los todos
-      return true;
-    } else {
-      // Si hay texto en el input, filtra los todos que coincidan con el texto
-      return todo.desc.toLowerCase().includes(searchValue.toLowerCase());
-    }
-  });
+  
   
 
   return (
@@ -108,7 +122,7 @@ function App() {
       value = {searchValue}
       />
       <TodoList>
-        {filteredTodoList.map((todo,index) => {
+        {filterTodoList.map((todo,index) => {
           return (
           <TodoItem 
             key={todo.desc} 
