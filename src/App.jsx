@@ -5,7 +5,9 @@ import { Titles } from './components/Titles';
 
 import './App.css';
 import { useState, useEffect } from 'react';
-
+import { CreateTodoButton } from './components/CreateTodoButton';
+import { Modal } from './components/Modal';
+import { TodoForm } from './components/TodoForm';
 function App() {
 
   // const data = [
@@ -32,6 +34,7 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [completedTodos, setCompletedTodos] = useState(0);
   const [searchedTodo, setSearchedTodo] = useState('');
+  const [openModal, setOpenModal] = useState(false);
   
   useEffect(() => {
     dataLocalStorage();
@@ -94,6 +97,7 @@ function App() {
         setSearchedTodo(event.target.value);
         console.log(searchedTodo);
       }}
+      value = {searchedTodo}
       />
       <TodoList>
         {todoList.map((todo,index) => {
@@ -107,6 +111,17 @@ function App() {
           />)
         })}
       </TodoList>
+
+      <CreateTodoButton
+        setOpenModal={setOpenModal}
+        openModal={openModal}
+      />
+      {openModal && (
+        <Modal>
+          <TodoForm/>
+        </Modal>
+      )}
+
     </div>
   );
 }
