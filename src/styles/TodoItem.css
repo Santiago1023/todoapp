@@ -50,3 +50,10 @@
 .debug{
     border: 1px solid red;
 }
+
+.underline{
+    text-decoration: line-through;
+}
+.no-underline{
+    text-decoration: none;
+}

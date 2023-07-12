@@ -31,6 +31,7 @@ function App() {
   const [totalTodos, setTotalTodos] = useState(0);
   const [todoList, setTodoList] = useState([]);
   const [completedTodos, setCompletedTodos] = useState(0);
+  const [searchedTodo, setSearchedTodo] = useState('');
   
   useEffect(() => {
     dataLocalStorage();
@@ -45,6 +46,7 @@ function App() {
     console.log('completedTodos: ', completedTodos, typeof(completedTodos));
     setTotalTodos(todoList.length);
   }, [todoList]);
+
 
   // useEffect(() => {
   //   console.log('todoList', todoList);
@@ -68,15 +70,41 @@ function App() {
     }
     return
   }
-
+  const handleCheck = (index) => {
+    const updatedList = [...todoList];
+    console.log('antes: ',updatedList);
+    updatedList[index].state = !updatedList[index].state;
+    console.log('despues: ',updatedList);
+    setTodoList(updatedList);
+  };
+  const handleDelete = (index) => {
+    const updatedList = [...todoList];
+    console.log('antes: ',updatedList);
+    updatedList.splice(index, 1);
+    // updatedList[index].state = !updatedList[index].state;
+    console.log('despues: ',updatedList);
+    setTodoList(updatedList);
+  };
+  
 
   return (
     <div className='container'>
       <Titles completedTodos={completedTodos} totalTodos={totalTodos}/>
-      <Input/>
+      <Input onChange = {(event) => {
+        setSearchedTodo(event.target.value);
+        console.log(searchedTodo);
+      }}
+      />
       <TodoList>
-        {todoList.map((todo) => {
-          return <TodoItem key={todo.desc} text={todo.desc}/>
+        {todoList.map((todo,index) => {
+          return (
+          <TodoItem 
+            key={todo.desc} 
+            text={todo.desc} 
+            onCheck={() => handleCheck(index)} 
+            state={todo.state} 
+            onDelete={() => handleDelete(index)} 
+          />)
         })}
       </TodoList>
     </div>
