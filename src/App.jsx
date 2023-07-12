@@ -33,7 +33,7 @@ function App() {
   const [totalTodos, setTotalTodos] = useState(0);
   const [todoList, setTodoList] = useState([]);
   const [completedTodos, setCompletedTodos] = useState(0);
-  const [searchedTodo, setSearchedTodo] = useState('');
+  const [searchValue, setSearchValue] = useState('');
   const [openModal, setOpenModal] = useState(false);
   
   useEffect(() => {
@@ -88,19 +88,27 @@ function App() {
     console.log('despues: ',updatedList);
     setTodoList(updatedList);
   };
+  const filteredTodoList = todoList.filter(todo => {
+    if (searchValue.trim() === "") {
+      // Si no hay texto en el input, muestra todos los todos
+      return true;
+    } else {
+      // Si hay texto en el input, filtra los todos que coincidan con el texto
+      return todo.desc.toLowerCase().includes(searchValue.toLowerCase());
+    }
+  });
   
 
   return (
     <div className='container'>
       <Titles completedTodos={completedTodos} totalTodos={totalTodos}/>
       <Input onChange = {(event) => {
-        setSearchedTodo(event.target.value);
-        console.log(searchedTodo);
+        setSearchValue(event.target.value);
       }}
-      value = {searchedTodo}
+      value = {searchValue}
       />
       <TodoList>
-        {todoList.map((todo,index) => {
+        {filteredTodoList.map((todo,index) => {
           return (
           <TodoItem 
             key={todo.desc} 
