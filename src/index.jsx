@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App.jsx';
+import MainApp from './App.jsx';
+// import App from './App.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <MainApp />
+    // <App />
 );
 
 

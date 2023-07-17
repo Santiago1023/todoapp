@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/Title.css';
-const Titles = ({completedTodos, totalTodos}) => {
+import { TodoContext } from './TodoContext';
+
+const Titles = () => {  
+  const {completedTodos, totalTodos } = useContext(TodoContext);  
   return (
     <>
         <div className="div-title">

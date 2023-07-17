@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../styles/TodoForm.css';
+import { TodoContext } from './TodoContext';
 
-const TodoForm = ({openModal, setOpenModal, todoList, setTodoList}) => {
+const TodoForm = () => {
+
+  const { openModal, setOpenModal, todoList, setTodoList } = useContext(TodoContext); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,7 +20,7 @@ const TodoForm = ({openModal, setOpenModal, todoList, setTodoList}) => {
     setNewTodoValue(event.target.value);
   } 
   return (
-    <form className='todo-form debug' onSubmit={handleSubmit}>
+    <form className='todo-form' onSubmit={handleSubmit}>
         <h1>Add a todo</h1>
         <textarea onChange={onChange} rows='5' placeholder='Description' className='desc-text-area'/>
         <div className='buttons'>
