@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Cursos-de-platzi/todo-react/static/css/main.6b4df787.css",
+    "main.js": "/Cursos-de-platzi/todo-react/static/js/main.d53d7c7e.js",
+    "index.html": "/Cursos-de-platzi/todo-react/index.html",
+    "main.6b4df787.css.map": "/Cursos-de-platzi/todo-react/static/css/main.6b4df787.css.map",
+    "main.d53d7c7e.js.map": "/Cursos-de-platzi/todo-react/static/js/main.d53d7c7e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b4df787.css",
+    "static/js/main.d53d7c7e.js"
+  ]
+}
