@@ -6,13 +6,15 @@ import { IconButton } from './IconButton';
 
 const CreateTodoButton = ({openModal, setOpenModal}) => {
   return (
-    <IconButton
-        icon={FaPlusCircle}
-        onClick={() => {
-            setOpenModal(!openModal);
-        }}
-        className='icon-add'
-    />
+    <div className='icon-button-container'>
+      <IconButton
+          icon={FaPlusCircle}
+          onClick={() => {
+              setOpenModal(!openModal);
+          }}
+          className='icon-add'
+      />
+    </div>
 
   );
 };

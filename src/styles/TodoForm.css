@@ -1,8 +1,16 @@
 
 .todo-form{
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 200px;
+    max-height: 700px;
+    max-width: 600px;
+    min-width: 200px;
     background-color: #D9D9D9;
+    padding: 30px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
 }
 .debug{
     border: 1px solid red;
@@ -24,14 +32,23 @@
     background-color: #007EFF;
 }
 
-.add-button:hover{
-    transform: scale(1.2); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
-}
+.add-button:hover,
 .cancel-button:hover{
-    transform: scale(1.2); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
+    transform: scale(1.1); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
 }
 
 .buttons{
     display: flex;
     gap: 30px;
+}
+.desc-text-area{
+    width: 100%;
+    font-size: x-large;
+    padding: 5px 5px;
+    color: #490000;
+}
+
+form>h1{
+    color: #490000;
+    font-weight: bold;
 }

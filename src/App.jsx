@@ -27,6 +27,14 @@ function App() {
   //     "desc": "Cuarto todo para realizar",
   //     "state": true,
   //   },
+  //   {
+  //     "desc": "Quinto todo para realizar",
+  //     "state": false,
+  //   },
+  //   {
+  //     "desc": "Sexto todo para realizar",
+  //     "state": false,
+  //   },
     
   // ]
 
@@ -101,6 +109,7 @@ function App() {
     updatedList[index].state = !updatedList[index].state;
     console.log('despues: ',updatedList);
     setTodoList(updatedList);
+    localStorage.setItem('data', JSON.stringify(updatedList));
   };
   const handleDelete = (index) => {
     const updatedList = [...todoList];
@@ -109,6 +118,7 @@ function App() {
     // updatedList[index].state = !updatedList[index].state;
     console.log('despues: ',updatedList);
     setTodoList(updatedList);
+    localStorage.setItem('data', JSON.stringify(updatedList));
   };
   
   
@@ -125,7 +135,8 @@ function App() {
         {filterTodoList.map((todo,index) => {
           return (
           <TodoItem 
-            key={todo.desc} 
+            // key={todo.desc}
+            key={index}
             text={todo.desc} 
             onCheck={() => handleCheck(index)} 
             state={todo.state} 
@@ -140,7 +151,7 @@ function App() {
       />
       {openModal && (
         <Modal>
-          <TodoForm/>
+          <TodoForm openModal={openModal} setOpenModal={setOpenModal} todoList={todoList} setTodoList={setTodoList}/>
         </Modal>
       )}
 

@@ -8,3 +8,12 @@
 .icon-add:hover {
     transform: scale(1.2); /* Aplica una transformación de escala para aumentar el tamaño en el estado de hover */
 }
+
+.icon-button-container{
+    position: fixed;
+    bottom: 20px;
+    right: 4%;
+    /* padding: 30px;
+    background: radial-gradient(circle, red, yellow);
+    border-radius: 50%; */
+}
