@@ -1,5 +1,8 @@
-# deploy with GitHub Pages
+# Deploy with GitHub Pages
 https://cursos-de-platzi.github.io/todo-react/
+
+# Figma file
+https://www.figma.com/file/B8UknL1e16UP77CnTaz4At/TodoApp?type=design&mode=design&t=xVtmVGuzoF9UVp6O-1
 
 # Getting Started with Create React App
 
