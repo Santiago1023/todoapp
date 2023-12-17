@@ -15,6 +15,7 @@ function TodoProvider({children}){
         console.log('Ejecutó metodo dataLocalStorage useEffect')
         console.log('todoList', todoList)
         console.log('todoList', filterTodoList)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
     
     useEffect(() => {
